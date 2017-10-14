@@ -33,11 +33,12 @@ For video clips, same logic is applied by processing individual frames.
 * numpy
 * matplotlib
 * moviepy
+* Jupyter Notebook
 
 
-## Usage
+## Usage/Examples
 **Images**
-
+*Raw Hough Lines*
 ```python
 image_list = os.listdir("test_images/")
 for image_name in image_list:
@@ -45,8 +46,16 @@ for image_name in image_list:
     find_lane_lines_raw(full_image_path)
 ```
 
-**Video**
+*Extrapolated Lane Lines*
+```python
+image_list = os.listdir("test_images/")
+for image_name in image_list:
+    full_image_path = 'test_images/' + image_name
+    find_lane_lines(full_image_path)
+```
 
+**Video**
+*Raw Hough Lines*
 ```python
 white_output_raw = 'test_videos_output/raw-solidWhiteRight.mp4'
 clip1_raw = VideoFileClip("test_videos/solidWhiteRight.mp4")
@@ -54,7 +63,15 @@ white_clip_raw = clip1_raw.fl_image(process_image_raw_lines)
 %time white_clip_raw.write_videofile(white_output_raw, audio=False)
 ```
 
-##Troubleshooting
+*Extrapolated Lane Lines*
+```python
+white_output = 'test_videos_output/solidWhiteRight.mp4'
+clip1 = VideoFileClip("test_videos/solidWhiteRight.mp4")
+white_clip = clip1.fl_image(process_image) 
+%time white_clip.write_videofile(white_output, audio=False)
+```
+
+## Troubleshooting
 
 **ffmpeg**
 
