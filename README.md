@@ -21,7 +21,7 @@ The logic comprises of an image processing pipeline comprising the following ste
 
 For video clips, same logic is applied by processing individual frames.
 
-##Directory Structure
+## Directory Structure
 ----
 * test_images: Directory containing sample images for testing
 * test_images_output: Directory containing processed images
@@ -32,7 +32,7 @@ For video clips, same logic is applied by processing individual frames.
 * README.md: Project readme file
 * writeup.md: project writeup file containing detailed information about the inner workings of this project
 
-##Requirements
+## Requirements
 ----
 * Python-3.5.2
 * OpenCV-3.3.0
@@ -73,5 +73,5 @@ imageio.plugins.ffmpeg.download()
 
 Once it's installed, moviepy should work.
 
-##License
+## License
 The content of this project is licensed under the [Creative Commons Attribution 3.0 license](https://creativecommons.org/licenses/by/3.0/us/deed.en_US).
