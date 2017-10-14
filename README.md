@@ -1,8 +1,8 @@
 
-#Project: Finding Lane Lines
+# Project: Finding Lane Lines
 
 ---   
-##Overview   
+## Overview   
    
 This project is about finding lane lines using [Open CV](https://opencv.org/) library. Either individual images can be fed or a video clip can be used as an input. 
 
