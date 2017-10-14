@@ -38,6 +38,7 @@ For video clips, same logic is applied by processing individual frames.
 
 ## Usage/Examples
 **Images**
+
 *Raw Hough Lines*
 ```python
 image_list = os.listdir("test_images/")
@@ -55,6 +56,7 @@ for image_name in image_list:
 ```
 
 **Video**
+
 *Raw Hough Lines*
 ```python
 white_output_raw = 'test_videos_output/raw-solidWhiteRight.mp4'
