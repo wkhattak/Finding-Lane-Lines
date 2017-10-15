@@ -32,3 +32,19 @@ white_yellow_image = cv2.bitwise_and(image,image, mask= mask_white_yellow)
 ```
 
 ![White Yellow Masked Image](writeup_images/white_yellow_image.jpg)
+
+3. **Converting images to Gray scale:**
+
+![Grayscale Image](writeup_images/gray_image.jpg)
+
+4. **Performing edge detection on Gray scale image:**The image was first blurred and then Canny edge detection was applied to obtain object edges, which is a prerequisite for Hough transform.
+
+![Canny Edges Image](writeup_images/canny_edges.jpg)
+
+5. **Applying a mask on the detected edges so that only the area where the left/right lanes appear is kept:**A mask was further applied to restrict image processing only to that area where the left/right lane lines normally appear. Basically a trapezoid ```vertices = np.array([[(60,imshape[0]),(450, 320), (490, 320), (imshape[1],imshape[0])]], dtype=np.int32)``` was used to mark the area of interest.
+
+![Masked Edges Image](writeup_images/masked_edges.jpg)
+
+6. **Applying Hough transformation to identify lines:**To obtain straight lines from Canny edges, Hough transform was applied. The Hough transform identifies potential lines by converting each edge point (image space) into a line (Hough space) and then performing a voting to identify a point where most of the lines intersect, thereby, resulting in the identification of a point in Hough space that represents a straight line in the image space.
+
+![Hough Lines Image](writeup_images/hough_lines_edges.jpg)
