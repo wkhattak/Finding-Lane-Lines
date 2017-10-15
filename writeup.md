@@ -1,4 +1,3 @@
-
 # Project Writeup: Finding Lane Lines
  
 ## Overview   
@@ -29,6 +28,7 @@ color_range = [(np.array([175, 175, 0], dtype = "uint8"), np.array([255, 255, 25
 
 mask_white_yellow = cv2.inRange(image,color_range[0][0],color_range[0][1])
 
-white_yellow_image = cv2.bitwise_and(image,image, mask= mask_white_yellow)```
+white_yellow_image = cv2.bitwise_and(image,image, mask= mask_white_yellow)
+```
 
 ![White Yellow Masked Image](writeup_images/white_yellow_image.jpg)
