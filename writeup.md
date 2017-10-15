@@ -24,4 +24,11 @@ My image processing pipeline consisted of 8 steps as follows:
 
 2. **Filtering out any non-white and non-yellow pixels:** This is done to make sure that only those pixels are processed later in the pipeline that belong to lane lines only. This helps with filtering out shadows, median, road surface colour change (gray/dark gray potentially due to resurfacing of a patch) that may give the impression of an actual line. This especially applies to the *challenge* video clip. The ```inRange()``` function was mainly used to create a mask along with the ```bitwise_and()``` function.
 
+```python
+color_range = [(np.array([175, 175, 0], dtype = "uint8"), np.array([255, 255, 255], dtype = "uint8"))]
+
+mask_white_yellow = cv2.inRange(image,color_range[0][0],color_range[0][1])
+
+white_yellow_image = cv2.bitwise_and(image,image, mask= mask_white_yellow)```
+
 ![White Yellow Masked Image](writeup_images/white_yellow_image.jpg)
