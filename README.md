@@ -4,7 +4,7 @@
 This project is about finding lane lines using [Open CV](https://opencv.org/) library. Either individual images can be fed or a video clip can be used as an input. 
 
 ## How Does It Work?
-The logic comprises of an image processing pipeline comprising the following steps:
+The logic comprises an image processing pipeline with the following steps:
 
 1. Reading in an image 
 2. Filtering out any non-white and non-yellow pixels
@@ -18,15 +18,15 @@ The logic comprises of an image processing pipeline comprising the following ste
 For video clips, same logic is applied by processing individual frames.
 
 ## Directory Structure
-* test_images: Directory containing sample images for testing
-* test_images_output: Directory containing processed images
-* test_videos: Directory containing sample videos for testing
-* test_videos_output: Directory containing processed videos
-* writeup_images: Directory containing images for project writeup
-* P1.html: Html output of the Python notebook
-* P1.ipynb: Python notebook containing the source code
-* README.md: Project readme file
-* writeup.md: project writeup file containing detailed information about the inner workings of this project
+* **test_images:** Directory containing sample images for testing
+* **test_images_output:** Directory containing processed images
+* **test_videos:** Directory containing sample videos for testing
+* **test_videos_output:** Directory containing processed videos
+* **writeup_images:** Directory containing images for project writeup
+* **P1.html:** Html output of the Python notebook
+* **P1.ipynb:** Python notebook containing the source code
+* **README.md:** Project readme file
+* **writeup.md:** project writeup file containing detailed information about the inner workings of this project
 
 ## Requirements
 * Python-3.5.2
