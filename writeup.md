@@ -65,8 +65,37 @@ for line in lines:
 ```
 
 
-8. **Extrapolating left/right lines:** Finally, having found the left/right lane lines, a pair of left/right lane lines can be obtained by extrapolating the left/right lines. A new function ```extrapolate_lines()``` was added. This function first fits a line to each of the left and right line segments.
+8. **Extrapolating left/right lines:** Finally, having found the left/right lane lines, a pair of left/right lane lines can be obtained by extrapolating the left/right lines. A new function ```extrapolate_lines()``` was added. This function first fits a line to each of the left and right line segments. Then it gets the *slope (m)* and the *intercept (b)* values. Then to construct the lane line, the min/max y coordinate values of the mask (the one that was used to restrict the image to only that area where lane lines normally occur) are plugged into the formula *x =  (y-b/m)* to find the corresponding min/max x coordinates. The reason min/max y values are used because the lane lines would always extend from te min y to max y, so all we need to find is the min/max x coordinates of the lane lines as this is what's unknown in the true sense.
 
+```python
+left_line_fit = np.polyfit(left_lines_x_points, left_lines_y_points, 1)
+    #f_left = np.poly1d(left_line_fit)
+    m_left,b_left = left_line_fit
+    max_x_left = int((mask_vertices[0][0][1]-b_left)//m_left)
+    min_x_left = int(( mask_vertices[0][1][1]-b_left)//m_left)
+...
+extrapolated_lines = np.array([
+        [[min_x_left,  mask_vertices[0][2][1], max_x_left, mask_vertices[0][0][1]]],
+        [[min_x_right,  mask_vertices[0][1][1], max_x_right, mask_vertices[0][0][1]]]
+    ])
+```
+
+Line Segemets with Extrapolated Lines
 ![Extrapolated Lines Image](writeup_images/extrapolated_lines.jpg)
 
+Final Output
 ![Output Image](writeup_images/final_output.jpg)
+
+### 2. Identify potential shortcomings with your current pipeline
+
+
+One potential shortcoming would be what would happen when ... 
+
+Another shortcoming could be ...
+
+
+### 3. Suggest possible improvements to your pipeline
+
+A possible improvement would be to ...
+
+Another potential improvement could be to ...
