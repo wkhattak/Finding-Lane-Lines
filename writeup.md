@@ -81,6 +81,7 @@ extrapolated_lines = np.array([
 ```
 
 Line Segemets with Extrapolated Lines
+
 ![Extrapolated Lines Image](writeup_images/extrapolated_lines.jpg)
 
 Final Output
