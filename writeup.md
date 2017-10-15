@@ -13,7 +13,7 @@ The main goals of the **Finding Lane Line** project are:
 
 ## Reflection
 
-###Pipeline
+### Pipeline
 
 My image processing pipeline consisted of 8 steps as follows:
 
