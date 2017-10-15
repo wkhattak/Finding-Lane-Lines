@@ -22,6 +22,7 @@ For video clips, same logic is applied by processing individual frames.
 * test_images_output: Directory containing processed images
 * test_videos: Directory containing sample videos for testing
 * test_videos_output: Directory containing processed videos
+* writeup_images: Directory containing images for project writeup
 * P1.html: Html output of the Python notebook
 * P1.ipynb: Python notebook containing the source code
 * README.md: Project readme file
