@@ -81,22 +81,21 @@ extrapolated_lines = np.array([
 ```
 
 Line Segemets with Extrapolated Lines
-
 ![Extrapolated Lines Image](writeup_images/extrapolated_lines.jpg)
 
 Final Output
 ![Output Image](writeup_images/final_output.jpg)
 
-### 2. Identify potential shortcomings with your current pipeline
+### Shortcomings
 
+* Lane lines will not be fully identified if the camera angle/position is different as this will invalidate the mask used to constrain the lane finding area.
+* Extrapolation of lines will fail if the lines are painted in some other colour.
+* Curves in road are currently not handled.
+* Shadows caused by trees and median as well as the median itself (if falling within the area of interest ) result in wrong lane line being extrapolated.
 
-One potential shortcoming would be what would happen when ... 
+### Improvements
 
-Another shortcoming could be ...
-
-
-### 3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+* Handle any size image rather than 960 x 540.
+* Make region of interest calculation dynamic and robust based on image size.
+* The method for finding left/right lane lines can be improved as on a curve at a far away distance the slope of both left/right lanes may end up being the same.
+* Handle curved roads by being able to fit a curved line to left/right line segments.
