@@ -96,5 +96,6 @@ Final Output
 
 * Handle any size image rather than just 960 x 540.
 * Make region of interest calculation dynamic and robust based on image size.
+* Apply region of interest right after getting the yellow/white image so that unnecessary pixels are not processed later in the pipeline, thereby making image processing faster.
 * The method for finding left/right lane lines can be improved as on a curve at a far away distance the slope of both left/right lanes may end up being the same.
 * Handle curved roads by being able to fit a curved line to left/right line segments.
